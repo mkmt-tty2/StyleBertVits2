@@ -7,7 +7,7 @@ RUN git lfs install
 
 WORKDIR /1
 RUN git clone https://github.com/mkmt-tty2/StyleBertVits2.git
-RUN mv StyleBertVits /app
+RUN mv StyleBertVits2 /app
 
 WORKDIR /app/model_assets
 RUN git clone https://huggingface.co/mkty/tsukuyomi
