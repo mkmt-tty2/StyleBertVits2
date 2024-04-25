@@ -1,6 +1,6 @@
 #/bin/bash
 USER="genesis0525" # 修正
-APP_NAME="runpod-style-bert-vits2-api4"
+APP_NAME="runpod-style-bert-vits2-api5"
 VERSION=$1
 
 # VERSIONを目視で確認するのでy/Nで確認
