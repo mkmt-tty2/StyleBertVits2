@@ -12,7 +12,8 @@ case "$yn" in [yY]*) ;; *) echo "中止します" ; exit ;; esac
 # git tag -a $VERSION -m "$VERSION"
 
 # buildコマンド
-sudo DOCKER_BUILDKIT=1 docker build --progress=plain . -f Dockerfile -t $USER/$APP_NAME:$VERSION
+# sudo DOCKER_BUILDKIT=1 docker build --progress=plain . -f Dockerfile -t $USER/$APP_NAME:$VERSION
+sudo DOCKER_BUILDKIT=1 docker build --progress=plain . -f Dockerfile.runpod -t $USER/$APP_NAME:$VERSION
 
 # pushコマンド
 sudo docker push $USER/$APP_NAME:$VERSION
