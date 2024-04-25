@@ -228,7 +228,7 @@ if __name__ == "__main__":
             style=style,
             style_weight=style_weight,
         )
-        logger.success("Audio data generated and sent successfully")
+        logger.success("Audio data generated and sent successfully2")
         with BytesIO() as wavContent:
             wavfile.write(wavContent, sr, audio)
             return Response(content=wavContent.getvalue(), media_type="audio/wav")
