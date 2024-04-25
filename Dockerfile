@@ -6,8 +6,11 @@ RUN pip3 uninstall -y cmake
 RUN git lfs install
 
 WORKDIR /1
-RUN git clone https://github.com/mkmt-tty2/StyleBertVits.git
+RUN git clone https://github.com/mkmt-tty2/StyleBertVits2.git
 RUN mv StyleBertVits /app
+
+WORKDIR /app/model_assets
+RUN git clone https://huggingface.co/mkty/tsukuyomi
 
 WORKDIR /app
 RUN pip3 install -r requirements.txt
