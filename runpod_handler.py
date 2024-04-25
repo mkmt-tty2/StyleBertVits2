@@ -4,6 +4,7 @@ import runpod
 import base64
 import requests
 from requests.adapters import HTTPAdapter, Retry
+from fastapi.responses import FileResponse, Response
 
 API_URL = "http://127.0.0.1:5000"
 
@@ -40,13 +41,14 @@ def inference(params):
     print("automatic_session.get")
 
     print(response.status_code)
-    audio_wav = response.content
-    # audio_base64 = response.content
+    # audio_wav = response.content
+    audio_base64 = response.content
 
     # wav音源をbase64に変換する
-    audio_base64 = base64.b64encode(audio_wav).decode("utf-8")
-
-    return {"voice": audio_base64}
+    # audio_base64 = base64.b64encode(audio_wav).decode("utf-8")
+            # Base64エンコードされたデータをテキストレスポンスとして返す
+    return Response(content=audio_base64, media_type="text/plain")
+    # return {"voice": audio_base64}
 
 
 def models_info():
