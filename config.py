@@ -196,7 +196,7 @@ class Webui_config:
 class Server_config:
     def __init__(
         self,
-        port: int = 18080,
+        port: int = 5000,
         device: str = "cuda",
         limit: int = 100,
         language: str = "JP",
