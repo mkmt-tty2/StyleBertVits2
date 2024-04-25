@@ -5,7 +5,7 @@ import base64
 import requests
 from requests.adapters import HTTPAdapter, Retry
 
-API_URL = "http://127.0.0.1:5000"
+API_URL = "http://127.0.0.1:8888"
 
 
 automatic_session = requests.Session()
