@@ -5,7 +5,9 @@ RUN apt update && apt install -y build-essential libssl-dev libffi-dev cmake git
 RUN pip3 uninstall -y cmake
 RUN git lfs install
 
-WORKDIR /1
+ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" /dev/null
+
+WORKDIR /
 RUN git clone https://github.com/mkmt-tty2/StyleBertVits2.git
 RUN mv StyleBertVits2 /app
 
@@ -18,7 +20,6 @@ RUN pip3 install runpod
 ENV LD_LIBRARY_PATH /opt/conda/lib/python3.10/site-packages/nvidia/cublas/lib:/opt/conda/lib/python3.10/site-packages/nvidia/cudnn/lib:${LD_LIBRARY_PATH}
 RUN python initialize.py --skip_jvnv
 
-ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" /dev/null
 
 RUN chmod +x start.sh
 
