@@ -38,11 +38,11 @@ def inference(params):
         params=params,
         timeout=60,
     )
-    print("automatic_session.get")
-
-    print(response.status_code)
+    # print("automatic_session.get")
+    # print(response.status_code)
     # audio_wav = response.content
-    audio_base64 = response.content
+    # audio_base64 = response.content
+    audio_base64 = response
 
     # wav音源をbase64に変換する
     # audio_base64 = base64.b64encode(audio_wav).decode("utf-8")
